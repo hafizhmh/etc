@@ -1,0 +1,39 @@
+# topo-tugas.txt
+
+# node		comment	yPos	xPos
+Singapore	Node0	20		20
+Jakarta		Node1	15		24
+Perth		Node2	10		40
+Sydney		Node3	7		57
+Tokyo		Node4	47		43
+Seoul		Node5	50		34
+Hongkong	Node6	37		27
+Manila		Node7	30		30
+KL			Node8	25		15
+China		Node9	45		25
+Melbourne	Node10	5		50
+Chennai		Node11	30		7
+Adelaide	Node12	7		50
+Osaka		Node13	45		35
+LA			Node14	42		67
+
+
+# srcNode   dstNode		bandwidth	metric	delay	queue
+Singapore	Jakarta		100Mbps		1		10ms	10
+Singapore	Perth		100Mbps		1		10ms	10
+Singapore	Hongkong	100Mbps		1		10ms	10
+Singapore	KL			100Mbps		1		10ms	10
+Singapore	Chennai		100Mbps		1		10ms	10
+Perth		Sydney		100Mbps		1		10ms	10
+Sydney		Tokyo		100Mbps		1		10ms	10
+Sydney     	Melbourne	100Mbps		1		10ms	10
+Sydney     	Adelaide	100Mbps		1		10ms	10
+Sydney		LA			100Mbps		1		10ms	10
+Tokyo		Seoul		100Mbps		1		10ms	10
+Tokyo		Hongkong	100Mbps		1		10ms	10
+Tokyo		Manila		100Mbps		1		10ms	10
+Tokyo		Osaka		100Mbps		1		10ms	10
+Tokyo		LA			100Mbps		1		10ms	10
+Seoul		Hongkong	100Mbps		1		10ms	10
+Hongkong	Manila		100Mbps		1		10ms	10
+Hongkong	China		100Mbps		1		10ms	10
