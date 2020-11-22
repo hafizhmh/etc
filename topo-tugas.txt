@@ -1,39 +1,75 @@
 # topo-tugas.txt
 
-# node		comment	yPos	xPos
-Singapore	Node0	20		20
-Jakarta		Node1	15		24
-Perth		Node2	10		40
-Sydney		Node3	7		57
-Tokyo		Node4	47		43
-Seoul		Node5	50		34
-Hongkong	Node6	37		27
-Manila		Node7	30		30
-KL			Node8	25		15
-China		Node9	45		25
-Melbourne	Node10	5		50
-Chennai		Node11	30		7
-Adelaide	Node12	7		50
-Osaka		Node13	45		35
-LA			Node14	42		67
+# any empty lines and lines starting with '#' symbol is ignored
+#
+# The file should contain exactly two sections: router and link, each starting with the corresponding keyword
+#
+# router section defines topology nodes and their relative positions (e.g., to use in visualizer)
+router
 
+# each line in this section represents one router and should have the following data
+# node    comment yPos	xPos
+Singapore Node0   20   20
+Jakarta   Node1   15   24
+Perth     Node2   10   40
+Sydney    Node3   7    57
+Tokyo     Node4   47   43
+Seoul     Node5   50   34
+Hongkong  Node6   37   27
+Manila    Node7   30   30
+KL        Node8   25   15
+China     Node9   45   25
+Melbourne Node10  5    50
+Chennai   Node11  30   7
+Adelaide  Node12  7    50
+Osaka     Node13  45   35
+LA        Node14  42   67
 
-# srcNode   dstNode		bandwidth	metric	delay	queue
-Singapore	Jakarta		100Mbps		1		10ms	10
-Singapore	Perth		100Mbps		1		10ms	10
-Singapore	Hongkong	100Mbps		1		10ms	10
-Singapore	KL			100Mbps		1		10ms	10
-Singapore	Chennai		100Mbps		1		10ms	10
-Perth		Sydney		100Mbps		1		10ms	10
-Sydney		Tokyo		100Mbps		1		10ms	10
-Sydney     	Melbourne	100Mbps		1		10ms	10
-Sydney     	Adelaide	100Mbps		1		10ms	10
-Sydney		LA			100Mbps		1		10ms	10
-Tokyo		Seoul		100Mbps		1		10ms	10
-Tokyo		Hongkong	100Mbps		1		10ms	10
-Tokyo		Manila		100Mbps		1		10ms	10
-Tokyo		Osaka		100Mbps		1		10ms	10
-Tokyo		LA			100Mbps		1		10ms	10
-Seoul		Hongkong	100Mbps		1		10ms	10
-Hongkong	Manila		100Mbps		1		10ms	10
-Hongkong	China		100Mbps		1		10ms	10
+# Note that `node` can be any string. It is possible to access to the node by name using Names::Find, see examples.
+
+# link section defines point-to-point links between nodes and characteristics of these links
+link
+
+# Each line should be in the following format (only first two are required, the rest can be omitted)
+# srcNode   dstNode     bandwidth   metric  delay   queue
+# bandwidth: link bandwidth
+# metric: routing metric
+# delay:  link delay
+# queue:  MaxPackets for transmission queue on the link (both directions)
+Singapore Jakarta   1Mbps	1 3.51666666667ms 10
+Singapore Perth     10Mbps	1 13.5533333333ms 10
+Singapore Hongkong  10Mbps	1 31.3333333333ms 10
+Singapore KL        10Mbps	1 1.18333333333ms 10
+Singapore Chennai   1Mbps	1 10.5833333333ms 10
+Sydney    Perth     10Mbps	1 13.5533333333ms 10
+Sydney    Tokyo     10Mbps	1 42.3333333333ms 10
+Sydney    Melbourne 1Mbps	1 2.92333333333ms 10
+Sydney    Adelaide  1Mbps	1 4.59ms          10
+Sydney    LA        10Mbps	1 42.5ms          10
+Tokyo     Seoul     5Mbps	1 1.66666666667ms 10
+Tokyo     Hongkong  1Mbps	1 42.3ms          10
+Tokyo     Manila    10Mbps	1 10.2333333333ms 10
+Tokyo     Osaka     1Mbps	1 1.68666666667ms 10
+Tokyo     LA        1Mbps	1 75.6066666667ms 10
+Hongkong  Seoul     5Mbps	1 42.3ms          10
+Hongkong  Manila    10Mbps	1 6.66666666667ms 10
+Hongkong  China     10Mbps	1 2.33333333333ms 10
+
+# singapore jakarta 1055km
+# singapore perth 4600km
+# singapore hongkong 9400km
+# singapore kl 355km
+# singapore chennai 3175km
+# perth sydney 4600km
+# sydney tokyo 12700km
+# sydney melbourne 877km
+# sydney adelaide 1377 km
+# sydney la 12750km
+# tokyo seoul 500km
+# tokyo hongkong 12690km
+# tokyo manila 3070km
+# tokyo osaka 506km
+# tokyo la 22682km
+# hongkong seoul 12690km
+# hongkong manila 2000km
+# hongkong china 700km
