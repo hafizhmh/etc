@@ -23,5 +23,7 @@ mini-ndn
 ```
 
 ## Req
+```
 sudo apt install libpcap-dev libsystemd-dev build-essential pkg-config python3-minimal libboost-all-dev libssl-dev libsqlite3-dev doxygen graphviz python3-pip python -y
 pip3 install --user sphinx sphinxcontrib-doxylink
+```
