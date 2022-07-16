@@ -29,7 +29,7 @@
         name: "{{ item }}"
         enabled: true
         state: started
-        with_item:
+        with_items:
         - httpd
         - mariadb
     - name: test php page is installed
