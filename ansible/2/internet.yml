@@ -29,9 +29,9 @@
         name: "{{ item }}"
         enabled: true
         state: started
-	  with_item:
-	    - httpd
-		- mariadb
+        with_item:
+        - httpd
+        - mariadb
     - name: test php page is installed
       get_url:
         url: "http://materials.example.com/labs/playbook-review/index.php"
